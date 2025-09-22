@@ -19,9 +19,24 @@ class Board:
         self.guesses = []
         self.ships = []
         
-    def print(self):
-        for row in self.board: 
-            print(" ".join(row))
+    def print(self, reveal=False):
+        """
+        Print the board.
+        - For player: reveal ships.
+        - For computer: only show hits (*) and misses (X).
+        """ 
+        for x in range(self.size):
+            row_display = []
+            for y in range(self.size):
+                cell = self.board[x][y]
+                if self.type == "computer" and not reveal:
+                    if cell == "@": # hide computer's ships
+                        row_display.append(".")
+                    else:
+                        row_display.append(cell)
+                else:
+                    row_display(cell)
+            print(" ".join(row_display))
             
     def guess(self, x, y):
         if (x, y) in self.guesses:
@@ -104,9 +119,9 @@ def play_game(computer_board, player_board):
     """
     while True:
         print("\nYour Board:")
-        player_board.print()
+        player_board.print(reveal=True) # shows your ships
         print("\nComputer's Board:")
-        computer_board.print()
+        computer_board.print() # while computers ships are hidden
         
         # Player's turn
         print("\nYour turn!")
