@@ -111,16 +111,24 @@ def make_guess(board, player_type="player"):
             if (x, y) not in board.guesses:
                 result = board.guess(x, y)
                 return result
-            
+def possessive(name: str) -> str:
+    """
+    Returns the possessive form of a name. 
+    Exmaple: Simon -> Simon's, James -> James'
+    """           
+    if name.endswith("s") or name.endswith("S"):
+        return f"{name}'"
+    else: 
+        return f"{name}'s"
             
 def play_game(computer_board, player_board):
     """
     Main game loop
     """
     while True:
-        print("\n{player_name}'s Board:")
+        print(f"\n{possessive(player_board.name)} Board:")
         player_board.print(reveal=True) # shows your ships
-        print("\nComputer's Board:")
+        print(f"\n{possessive(player_board.name)} Board:")
         computer_board.print() # while computers ships are hidden
         
         # Player's turn
