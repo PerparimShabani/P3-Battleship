@@ -118,7 +118,7 @@ def play_game(computer_board, player_board):
     Main game loop
     """
     while True:
-        print("\nYour Board:")
+        print("\n{player_name}'s Board:")
         player_board.print(reveal=True) # shows your ships
         print("\nComputer's Board:")
         computer_board.print() # while computers ships are hidden
