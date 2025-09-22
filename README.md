@@ -1,32 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleship 
+The classic game that now has been made into a terminal python game, that runs of Code institutes mock terminal on Heroku. 
 
-Welcome,
+Players can take on the challange and see if they are better then the computer. The battleships occupies one square on the board randomly every game. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 26, 2025**
 
-## Reminders
+# How to play! 
+Anyone can play and its fairly easy aswell. 
+Every turn you are allowed to make one guess to score a hit but first before you start the game you need to enter your name. 
+This will generate two random boards. 
+You as the player will be able to see where your own ships are on your side of the board, because they will have the `@` as an indication.
+But you wont be able to see the computers ships. 
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+If you make a guess and unfortunatly Miss then the `X` will appear to show where you missed. But if you hit then you will get `*` sign as a indication. 
+The winner is the one that sinks all of their opponent's battleship first. 
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features 
+* Random board generation
+  * Ships are randomly placed on both the player and computers boards
+  * The player can't see where the computer's ships are
 
-1. `heroku/python`
-2. `heroku/nodejs`
++ Computer is your opponent
++ Current score will be taking with to the next round if you continue to play
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+<img width="280" height="390" alt="image" src="https://github.com/user-attachments/assets/b0bc873e-ec6f-472a-97d9-abf2054e8199" />
+<img width="280" height="390" alt="image" src="https://github.com/user-attachments/assets/63f871e7-0ac4-44ca-8ab4-92253253c948" />
+<img width="280" height="390" alt="image" src="https://github.com/user-attachments/assets/bccd7a0e-f254-48bb-8754-b3c7c2e0fb4e" />
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
++ Input validation and error-controll
+    + You wont be able to guess the same thing twice
+    + The coordinates must be inside of the desegnated area of the grid
+    + You must enter numbers
+ 
 
-## Constraints
+##Bugs 
+###solved 
++ had the missfortune of having to deal with TypeErrors. Easy to solve but small misses like that should not be made so often.
++ Had issues with the Boards because i wanted one to show the players name after you've typed it in. When I thought I solved it just showed that i had dupplicated the problem instead but in the end by retracing my steps and by making the code simpler then i initially did
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+##Remaining Bugs
++ No bugs remaining
 
----
 
-Happy coding!
+## Future Features 
++ Allow player to select difficulty level of the computer
++ Allow players to choose the amount of ships and the boards size
++ Be able to move and put the ships down on the map however the play feels like
+
+## Testing 
+I have done test on the PP3 by doing the following things:
+ + Put invalid inputs just to see if there needed to get fixed or if it was working as intended
+
+
+##Deployment 
+I used Code institute's mock tyerminal when i deployed it on Heroku 
