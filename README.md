@@ -36,8 +36,8 @@ The winner is the one that sinks all of their opponent's battleship first.
     + You must enter numbers
  
 
-##Bugs 
-###solved 
+## Bugs 
+### solved 
 + had the missfortune of having to deal with TypeErrors. Easy to solve but small misses like that should not be made so often.
 + Had issues with the Boards because i wanted one to show the players name after you've typed it in. When I thought I solved it just showed that i had dupplicated the problem instead but in the end by retracing my steps and by making the code simpler then i initially did
 
@@ -55,6 +55,6 @@ I have done test on the PP3 by doing the following things:
  + Put invalid inputs just to see if there needed to get fixed or if it was working as intended
 
 
-##Deployment 
+## Deployment 
 I used Code institute's mock terminal when i deployed it on Heroku 
 >>>>>>> 67fc5934baa567f5de1e4aca01fac27b32d4b553
