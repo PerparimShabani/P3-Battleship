@@ -158,8 +158,6 @@ def new_game():
     
     size = 5 
     num_ships = 4
-    scores["computer"] = 0 
-    scores["player"] = 0
     print("-" * 35)
     print("Welcome to Battleship!")
     print(f" Board size: {size}. Number of ships: {num_ships}")
@@ -178,8 +176,24 @@ def new_game():
     # Play the game 
     play_game(computer_board, player_board)
     
-    # Show scores 
-    print("\nFinal Scores:")
-    print(scores)
+    # Show scores after this round
+    print("\nCurrent Scores:")
+    print(f"{player_board.name}: {scores['player']}")
+    print(f"{computer_board.name}: {scores['computer']}")
+
+
+def main():
+    # Reset scores at the very beginning of that program
+    scores["computer"] = 0
+    scores["player"] = 0
     
-new_game()
+    while True:
+        new_game()
+        choice = input("\nDo you want to play again? (y/n): ").strip().lower()
+        if choice != "y":
+            print("Thanks for playing! Final Scores:")
+            print(f"Player: {scores['player']} | Computer: {scores['computer']}")
+            print("Goodbye")
+            break
+if __name__ == "__main__":
+    main()
