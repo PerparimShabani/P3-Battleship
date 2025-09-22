@@ -24,20 +24,24 @@ class Board:
             print(" ".join(row))
             
     def guess(self, x, y):
+        if (x, y) in self.guesses:
+            return "Already guessed"
         self.guesses.append((x, y))
         self.board[x] [y] = "X"
         
         if (x, y) in self.ships:
             self.board[x] [y] = "*"
+            self.ships.remove((x, y))
             return "Hit"
         else:
             return "Miss"
     
-    def add_ship(self, x, y, type="computer"):
+    def add_ship(self, x, y):
         if len(self.ships) >= self.num_ships:
             print("Error: you cannot add any more ships!")
+        elif (x, y) in self.ships:
+            pass # prevent duplicates
         else: 
             self.ships.append((x, y))
             if self.type == "player":
                 self.board[x] [y] = "@"
-            
