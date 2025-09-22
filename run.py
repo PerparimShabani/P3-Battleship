@@ -96,3 +96,32 @@ def make_guess(board, player_type="player"):
             if (x, y) not in board.guesses:
                 result = board.guess(x, y)
                 return result
+            
+            
+def play_game(computer_board, player_board):
+    """
+    Main game loop
+    """
+    while True:
+        print("\nYour Board:")
+        player_board.print()
+        print("\Computer's Board:")
+        computer_board.print()
+        
+        # Player's turn
+        print("\nYour turn!")
+        result = make_guess(computer_board, "player")
+        print(f"You guessed: {result}")
+        if len(computer_board.ships) == 0:
+            print("You sank all the computer's ships! You win!")
+            scores["player"] += 1 
+            break
+        
+        # Computer's turn
+        print("\nComputer's turn...")
+        result = make_guess(player_board, "computer")
+        print(f"Computer guessed: {result}")
+        if len(player_board.ships) == 0:
+            print("The computer sank all your ships! You lose.")
+            scores["computer"] += 1 
+            break
