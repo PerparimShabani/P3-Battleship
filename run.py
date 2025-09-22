@@ -174,4 +174,4 @@ def new_game():
     print("\nFinal Scores:")
     print(scores)
     
-new_game
+new_game()
