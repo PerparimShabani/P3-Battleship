@@ -70,3 +70,29 @@ def populate_board(board):
         x = random_point(board.size)
         y = random_point(board.size)
         board.add_ship(x, y)
+        
+
+
+def make_guess(board, player_type="player"):
+    """
+    Handles guess from the player and computer
+    """
+    if player_type == "player":
+        while True:
+            try:
+                x = int(input("Enter row: "))
+                y = int(input("Enter column: "))
+                if valid_coordinates(x, y, board):
+                    result = board.guess(x, y)
+                    return result
+                else:
+                    print("Invalid coordinates. Try again.")
+            except ValueError:
+                print("Please enter numbers only.")
+    else: # computer guesses randomly
+        while True:
+            x = random_point(board.size)
+            y = random_point(board.size)
+            if (x, y) not in board.guesses:
+                result = board.guess(x, y)
+                return result
