@@ -125,3 +125,38 @@ def play_game(computer_board, player_board):
             print("The computer sank all your ships! You lose.")
             scores["computer"] += 1 
             break
+        
+        
+def new_game():
+    """
+    Starts a new game. Sets number of ships, board size, resets the
+    scores and initialises the boards.
+    """
+    
+    size = 5 
+    num_ships = 4
+    scores["computer"] = 0 
+    scores["player"] = 0
+    print("-" * 35)
+    print("Welcome to Battleship!")
+    print(f" Board size: {size}. Number of ships: {num_ships}")
+    print(" Top left corner is row: 0, col: 0")
+    print("-" * 35)
+    player_name = input("Please enter your name: \n")
+    print("-" * 35)
+    
+    computer_board = Board(size, num_ships, "Computer", type="computer")
+    player_board = Board(size, num_ships, player_name, type="player")
+    
+    # Place ships
+    populate_board(computer_board)
+    populate_board(player_board)
+    
+    # Play the game 
+    play_game(computer_board, player_board)
+    
+    # Show scores 
+    print("\nFinal Scores:")
+    print(scores)
+    
+new_game
