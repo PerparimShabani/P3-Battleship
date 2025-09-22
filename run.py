@@ -128,7 +128,7 @@ def play_game(computer_board, player_board):
     while True:
         print(f"\n{possessive(player_board.name)} Board:")
         player_board.print(reveal=True) # shows your ships
-        print(f"\n{possessive(player_board.name)} Board:")
+        print("\nComputer's Board:")
         computer_board.print() # while computers ships are hidden
         
         # Player's turn
