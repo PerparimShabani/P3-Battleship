@@ -52,3 +52,11 @@ def random_point(size):
     Helper function to return a random integer between 0 and size
     """
     return randint(0, size - 1)
+
+
+def valid_coordinates(x, y, board):
+    """
+    Check if coordinates are valid and inside the board
+    """
+    return 0 <= x < board.size and 0 <= y < board.size
+
