@@ -56,5 +56,5 @@ I have done test on the PP3 by doing the following things:
 
 
 ##Deployment 
-I used Code institute's mock tyerminal when i deployed it on Heroku 
+I used Code institute's mock terminal when i deployed it on Heroku 
 >>>>>>> 67fc5934baa567f5de1e4aca01fac27b32d4b553
