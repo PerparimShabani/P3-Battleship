@@ -35,7 +35,7 @@ class Board:
                     else:
                         row_display.append(cell)
                 else:
-                    row_display(cell)
+                    row_display.append(cell)
             print(" ".join(row_display))
             
     def guess(self, x, y):
