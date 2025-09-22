@@ -105,7 +105,7 @@ def play_game(computer_board, player_board):
     while True:
         print("\nYour Board:")
         player_board.print()
-        print("\Computer's Board:")
+        print("\nComputer's Board:")
         computer_board.print()
         
         # Player's turn
